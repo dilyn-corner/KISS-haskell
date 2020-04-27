@@ -1,6 +1,6 @@
 gmp
-gnugrep
+gnugrep make
 libffi
 llvm make
 ncurses
-xz
+xz make
