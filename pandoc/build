@@ -1,0 +1,22 @@
+#!/bin/sh -e
+
+export CABAL_DIR="$1/cabal"
+
+cabal update
+cabal configure \
+    --prefix=/usr \
+    --disable-tests \
+    --enable-split-sections \
+    --ghc-option="-split-sections" \
+    --flags="+embed_data_files -trypandoc +static" 
+
+cabal install --only-dependencies
+cabal build
+
+# Install does not make the directory for us
+mkdir -p "$1/usr/bin"
+cabal install \
+    --installdir="$1/usr/bin" \
+    --install-method=copy
+
+install -Dm644 man/pandoc.1 "$1/usr/share/man/man1/pandoc.1"
