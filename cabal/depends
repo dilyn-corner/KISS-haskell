@@ -1,0 +1,4 @@
+ghc make
+gmp
+libffi
+zlib

@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+patch -p1 < ghc-8.8.patch 
+
+env HOME="$PWD/build" EXTRA_CONFIGURE_OPTS="" ./bootstrap.sh -j --no-doc
+
+install -Dm755 dist/build/cabal/cabal "$1/usr/bin/cabal"
