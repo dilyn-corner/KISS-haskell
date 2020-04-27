@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+mkdir -p "$1/usr/share/pandoc"
+
+cp -r bin share "$1/usr"
+
+rm "$1/usr/bin/pandoc-citeproc" \
+   "$1/usr/share/man/man1/pandoc-citeproc.1.gz"
+
+cp -r data "$1/usr/share/pandoc"
