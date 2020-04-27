@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+./configure \
+    --prefix="/usr" \
+    --disable-ld-override
+
+make DESTDIR="$1" install
