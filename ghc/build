@@ -19,7 +19,7 @@ ffi_lib=$(pkg-config libffi --libs-only-L); ffi_lib="${ffi_lib%% }"
     --with-nm=nm \
     --with-objdump=objdump \
     --disable-ld-override \
-    CONF_CC_OPTS_STAGE0=" $ffi_inc $ffi_lib "
+    CONF_CC_OPTS_STAGE0=" $ffi_lib "
 
 sed -i -e 's/unknown/pc/g' llvm-targets
 
