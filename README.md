@@ -1,12 +1,12 @@
 # KISS-haskell
 
-I need to batch convert .docx to .pdf. The easiest way I know of is via pandoc. 
+I needed to batch convert .docx to .pdf. The easiest way I know of is via pandoc. 
 
 pandoc-bin is in Community. 
 
 For *good* reason. 
 
-Luckily, somebody went through the hard work of compiling GHC on musl from a glibc distro already. So we use his work to bootstrap a proper GHC build. From there, we can get cabal for all of our packages if we want to. Alternatively, we can package them and abuse cabal. Because why do languages need their own package manager? 
+Luckily, [somebody](https://github.com/redneb/ghc-alt-libc/) went through the hard work of compiling GHC on musl from a glibc distro already. So we use his work to bootstrap a proper GHC build. From there, we can get cabal for all of our packages if we want to. Alternatively, we can package them and abuse cabal. Because why do languages need their own package manager? 
 
 
 If you do not have a working GHC, install `ghc-bootstrap` first (you'll have no choice; `ghc` will fail to build). Then build `ghc`, and then uninstall the bootstrap before installing the full thing. That is, in order:
