@@ -16,4 +16,9 @@ If you do not have a working GHC, install `ghc-bootstrap` first (you'll have no 
 4. `kiss r ghc-bootsrap`
 5. `kiss i ghc`
 
+Note: if you get an error about a missing `libtinfo.so.6`, it's because we don't make one with KISS' `ncurses`. It is still required for god-knows-why; merely do the following:
+```ln -s /usr/lib/libncursesw.so.6 /usr/lib/libtinfo.so.6```
+
+
+
 The first two steps will take almost no time. Because we use an llvm-perf build of GHC, it takes far longer. On my 2014 Macbook Pro (2.6Ghz i5, 8GB DDR3), upwards of 4 hours. Have fun!
