@@ -1,3 +1,11 @@
+|/
+|\ISS                                                           https://k1ss.org
+________________________________________________________________________________
+
+
+KISS-haskell - A KISS repository for Haskell projects
+________________________________________________________________________________
+
 # KISS-haskell
 
 I needed to batch convert .docx to .pdf. The easiest way I know of is via pandoc. 
